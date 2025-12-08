@@ -1,9 +1,9 @@
 # ⚽ System of Financial Fair Play (FFP) 
 ### Oracle 21c PL/SQL Capstone Project 
 
-**Names:** NDAGIJIMANA Cedric  
-**Student ID**: 27655   
-**Group**: TUES  
+**Names:** CYIZERE SIBORUREMA Elie  
+**Student ID**: 27492   
+**Group**: MON  
 
 
 
