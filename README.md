@@ -35,7 +35,7 @@ ALTER TABLE Financial_Records ADD FFP_Status VARCHAR2(20);
 
 This column flags each record as `'Compliant'` or `'Non-Compliant'` based on net profit. This addition is crucial for evaluating each club's financial health and enforcing FFP rules.
 
-![image alt](https://github.com/cedric299/Tue_27655_Financial_Fair_Play/blob/8215587b4af97ffc04f537b668aa1ee147005efb/Phase%20VI/DML%20%26%20DDL%20Operations.png) 
+![image alt](https://github.com/emerick149/mon_27492_Financial_Fair_Play/blob/main/phase%20vi/operation.png) 
 
 ---
 
@@ -54,7 +54,7 @@ END;
 
 ```
 
-![image alt](https://github.com/cedric299/Tue_27655_Financial_Fair_Play/blob/8215587b4af97ffc04f537b668aa1ee147005efb/Phase%20VI/DML%20Operations%20(Insert%2C%20Update%2C%20Delete).png)
+![image alt](https://github.com/emerick149/mon_27492_Financial_Fair_Play/blob/main/phase%20vi/update%2Cdelete%2Cinsert.png)
 
 
 
@@ -73,8 +73,8 @@ Captures new financial contributions from club owners:
 ```sql
 INSERT INTO Owners_Investments VALUES (411, 1, 60000000);
 ```
-![image alt](https://github.com/cedric299/Tue_27655_Financial_Fair_Play/blob/8215587b4af97ffc04f537b668aa1ee147005efb/Phase%20V/Creating%20tables.png) 
-![image alt](https://github.com/cedric299/Tue_27655_Financial_Fair_Play/blob/8215587b4af97ffc04f537b668aa1ee147005efb/Phase%20V/Insert%20trasfer%20data.png)
+![image alt](https://github.com/emerick149/mon_27492_Financial_Fair_Play/blob/main/phase%20v/creating%20tables.png) 
+![image alt](https://github.com/emerick149/mon_27492_Financial_Fair_Play/blob/main/phase%20v/inserting%20data.png)
 
 ---
 
