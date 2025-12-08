@@ -83,10 +83,16 @@ INSERT INTO Owners_Investments VALUES (411, 1, 60000000);
 To monitor financial aggressiveness among clubs, we use a window function to calculate total transfer fees grouped by receiving club:
 
 ```sql
-SELECT To_Club, SUM(Fee) OVER (PARTITION BY To_Club) AS Total_Transfer_Fees
-FROM Transfers;
+SELECT 
+    c.Club_Name AS To_Club,
+    t.Transfer_Fee,
+    SUM(t.Transfer_Fee) OVER (PARTITION BY c.Club_Name) AS Total_Transfer_Fees
+FROM Transfers t
+JOIN Clubs c ON t.Club_ID = c.Club_ID
+ORDER BY c.Club_Name, t.Transfer_Fee DESC;
+
 ```
-![image alt](https://github.com/cedric299/Tue_27655_Financial_Fair_Play/blob/8215587b4af97ffc04f537b668aa1ee147005efb/Phase%20VII/Simple%20Problem%20Statement%20with%20Analytic%20(Window)%20Function.png) 
+![image alt](https://github.com/emerick149/mon_27492_Financial_Fair_Play/blob/main/phase%20vii/image.png) 
 
 This helps detect which clubs are consistently spending the most during transfer windows.
 
@@ -112,8 +118,8 @@ EXCEPTION
 END;
 /
 ```
-![image alt](https://github.com/cedric299/Tue_27655_Financial_Fair_Play/blob/8215587b4af97ffc04f537b668aa1ee147005efb/Phase%20VII/FinancialTools.png) 
-![image alt](https://github.com/cedric299/Tue_27655_Financial_Fair_Play/blob/8215587b4af97ffc04f537b668aa1ee147005efb/Phase%20VII/Fetch%20Financial%20Records%20by%20Club.png)
+![image alt](https://github.com/emerick149/mon_27492_Financial_Fair_Play/blob/main/phase%20vii/procedure%20created.png) 
+
 
 ### ✅ Package and Package Body
 
@@ -171,7 +177,7 @@ CREATE TABLE Holidays (
 INSERT INTO Holidays VALUES (TO_DATE('2025-06-01', 'YYYY-MM-DD'), 'Heroes Day');
 INSERT INTO Holidays VALUES (TO_DATE('2025-06-15', 'YYYY-MM-DD'), 'Independence Day');
 ```
-![image alt](https://github.com/cedric299/Tue_27655_Financial_Fair_Play/blob/8215587b4af97ffc04f537b668aa1ee147005efb/Phase%20VII/Restrict_Weekday_Holiday_Changes.png) 
+![image alt](https://github.com/emerick149/mon_27492_Financial_Fair_Play/blob/main/phase%20vii/inserting%20in%20holidays.png) 
 
 ### ✅ Step 2: Trigger to Restrict DML on Weekdays and Holidays
 
@@ -195,7 +201,7 @@ END;
 /
 ```
 ---
-![image alt](https://github.com/cedric299/Tue_27655_Financial_Fair_Play/blob/8215587b4af97ffc04f537b668aa1ee147005efb/Phase%20VII/Our%20trigger%20worked.png)
+![image alt](https://github.com/emerick149/mon_27492_Financial_Fair_Play/blob/main/phase%20vii/inserting%20in%20weekend.png)
 
 ## 🔍 Audit Trail and User Action Logging
 
@@ -257,7 +263,7 @@ BEGIN
 END;
 /
 ```
-![image alt](https://github.com/cedric299/Tue_27655_Financial_Fair_Play/blob/8215587b4af97ffc04f537b668aa1ee147005efb/Phase%20VII/Auditing.png)
+![image alt](https://github.com/emerick149/mon_27492_Financial_Fair_Play/blob/main/phase%20vii/checking%20audit%20log.png)
 
 ---
 
