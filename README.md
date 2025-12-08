@@ -176,6 +176,10 @@ CREATE TABLE Holidays (
 
 INSERT INTO Holidays VALUES (TO_DATE('2025-06-01', 'YYYY-MM-DD'), 'Heroes Day');
 INSERT INTO Holidays VALUES (TO_DATE('2025-06-15', 'YYYY-MM-DD'), 'Independence Day');
+
+----lets insert
+INSERT INTO Financial_Records (Record_ID, Club_ID, Season, Revenue, Expenses, Net_Profit)
+VALUES (100, 1, '2025/2026', 100000, 90000, 10000);
 ```
 ![image alt](https://github.com/emerick149/mon_27492_Financial_Fair_Play/blob/main/phase%20vii/inserting%20in%20holidays.png) 
 
@@ -199,6 +203,10 @@ BEGIN
     END IF;
 END;
 /
+
+----lets insert
+INSERT INTO Financial_Records (Record_ID, Club_ID, Season, Revenue, Expenses, Net_Profit)
+VALUES (100, 1, '2025/2026', 100000, 90000, 10000);
 ```
 ---
 ![image alt](https://github.com/emerick149/mon_27492_Financial_Fair_Play/blob/main/phase%20vii/inserting%20in%20weekend.png)
