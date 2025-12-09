@@ -52,6 +52,22 @@ SET FFP_Status = CASE
     ELSE 'Non-Compliant'
 END;
 
+----inserting
+INSERT INTO Financial_Records 
+(Record_ID, Club_ID, Season, Revenue, Expenses, Net_Profit, FFP_Status)
+VALUES 
+(111, 1, '2024/2025', 320000000, 310000000, 10000000, 'COMPLIANT');
+
+-----updating
+UPDATE Clubs 
+SET Stadium = 'Rwanda Premier League Stadium'
+WHERE Club_ID = 1;
+
+-----deleting
+DELETE FROM Sanctions 
+WHERE Sanction_ID = 303;
+
+
 ```
 
 ![image alt](https://github.com/emerick149/mon_27492_Financial_Fair_Play/blob/main/phase%20vi/update%2Cdelete%2Cinsert.png)
